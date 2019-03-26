@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='UTF-8' ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <h:outputStylesheet name="./css/default.css"/>
+        <h:outputStylesheet name="./css/cssLayout.css"/>
+        <title>Facelets Template</title>
+    </h:head>
+
+    <h:body>
+        <h:form>
+            <div  id="top">
+                <ui:insert name="top">Top</ui:insert>
+            </div>
+            <div>
+                <div id="left">
+                    <!--<ui:insert name="left">Left</ui:insert>-->
+                    <h:link value="Students Informations" />
+                </div>
+                <div id="content" class="left_content">
+                    <!--<ui:insert name="content">Content</ui:insert>-->
+                    <h:panelGrid columns="2">
+
+                        <h:outputText value="ID"/>
+                        <h:inputText value="#{student.id}"/>
+
+                        <h:outputText value="UserName"/>
+                        <h:inputText value="#{student.name}"/>
+
+                        <h:outputText value="Password" />
+                        <h:inputText value="#{student.password}"/>
+
+                        <h:outputText value="Address"/>
+                        <h:inputText value="#{student.address}"/>
+
+                        <h:outputText  value="Course Name"/>
+                        <h:inputText value="#{student.course}"/>
+
+                        <h:commandButton value="Add Student" action="#{student.addStudent()}"/>
+                        <h:column>
+                            <h:commandButton value="Update Student" action="#{student.updateSTudent()}"/>
+
+                            <h:commandButton value="Delete Student" action="#{student.deleteStudent()}"/>
+                            
+                        </h:column>
+
+                    </h:panelGrid>
+                </div>
+            </div>
+            <div id="bottom">
+                <ui:insert name="bottom">Bottom</ui:insert>
+            </div>
+        </h:form>
+    </h:body>
+
+</html>
